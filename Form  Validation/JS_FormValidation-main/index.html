@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: white;
+        font-size: 50px;
+        margin-bottom: 20px;
+        font-family: sans-serif;
+        font-weight: 300;
+    }
+
+    form {
+        background-color: rgba(255, 255, 255, 0.152);
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+    }
+
+    .form-cont {
+        display: flex;
+        width: 95%;
+        margin-top: 10px;
+        background-color: black;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    label {
+        background-color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-right: 10px;
+        font-size: 15px;
+        width: 35%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #reqd {
+        color: red;
+    }
+
+    .form-cont input {
+        background-color: black;
+        border: none;
+        color: white;
+        outline: none;
+        width: 70%;
+        font-size: 16px;
+    }
+
+    select {
+        background-color: black;
+        border: none;
+        color: white;
+        width: 70%;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .form-cont1 {
+        display: flex;
+        width: 95%;
+        margin-top: 10px;
+        background-color: black;
+        border-radius: 20px;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    textarea {
+        background-color: black;
+        border: none;
+        color: white;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    #submitbtn {
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    #submitbtn:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .form-cont2 {
+        display: flex;
+        width: 95%;
+        margin-top: 10px;
+        background-color: black;
+        border-radius: 20px;
+        overflow: hidden;
+        flex-direction: row;
+    }
+
+    .dobin {
+        display: flex;
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dobin input {
+        background-color: black;
+        border: none;
+        color: white;
+        outline: none;
+        width: 25%;
+        font-size: 16px;
+    }
+
+    .vr{
+        color: white;
+        font-size: 20px;
+        margin: 0px 10px;
+    }
+
+
+    .err{
+        color: red;
+        font-size: 12px;
+        margin: 5px 0px;
+        display: none;
+        width: 95%;
+        margin-left:70%;
+    }
+</style>
+
+<body>
+    <h1>Registration Form</h1>
+    <form>
+        <div class="form-cont">
+            <label>First Name: <span id="reqd">*</span></label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+        </div>
+        <p class="err"  id="firstnameerr">Please Enter First Name</p>
+
+        <div class="form-cont">
+            <label>Second Name:
+            </label>
+            <input type="text" id="second-name" name="second-name" placeholder="Enter your second name">
+        </div>
+        <!-- <p class="err"  id="firstnameerr">Please Enter Second Name</p> -->
+
+        <div class="form-cont">
+            <label>Email:<span id="reqd">*</span>
+            </label>
+
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <p class="err"  id="emailerr">Please Enter Email</p>
+
+        <div class="form-cont2">
+            <label>DOB: <span id="reqd">*</span></label>
+            <div class="dobin">
+                <input type="number" id="dobday" placeholder="DD" min="1" max="31" name="dobday">
+                <div class="vr">|</div>
+                <input type="number" id="dobmonth" placeholder="MM" min="1" max="12" name="dobmonth">
+
+                <div class="vr">|</div>
+
+                <input type="number" id="dobyear" placeholder="YYYY" min="1900" max="2021" name="dobyear">
+            </div>
+        </div>
+
+
+        <p class="err"  id="doberr">Please Enter DOB</p>
+
+        <div class="form-cont">
+            <label>Phone:<span id="reqd">*</span>
+            </label>
+
+            <input type="number" id="phone" name="phone" placeholder="Enter your phone number" maxlength="10" >
+        </div>
+        <p class="err"  id="phoneerr">Please Enter Phone</p>
+
+        <div class="form-cont">
+            <label>Password:<span id="reqd">*</span>
+            </label>
+
+            <input type="text" id="password" name="password" placeholder="Enter your password">
+        </div>
+        <p class="err"  id="passworderr">Please Enter Password</p>
+
+        <div class="form-cont">
+            <label>Confirm Password:<span id="reqd">*</span>
+            </label>
+
+            <input type="text" id="confirmpassword" name="confirmpassword" placeholder="Enter your confirm password">
+        </div>
+        <p class="err"  id="confirmpassworderr">Please Enter Confirm Password</p>
+
+        <div class="form-cont">
+            <label>Country: <span id="reqd">*</span></label>
+            <select id="country" name="country">
+                <option value="">Select Country</option>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+            </select>
+        </div>
+        <p class="err"  id="countryerr">Please Enter Country</p>
+
+        <div class="form-cont1">
+            <label>Address:</label>
+            <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+        </div>
+
+
+        <input type="submit" value="Submit" id="submitbtn"
+            onclick="handleformdata(event)"
+        >
+    </form>
+</body>
+
+
+<script>
+    const handleformdata = (e)=>{
+        e.preventDefault();
+        let firstname = document.getElementById("first-name").value;
+        let secondname = document.getElementById("second-name").value;
+        let email = document.getElementById("email").value;
+        let dobday = document.getElementById("dobday").value;
+        let dobmonth = document.getElementById("dobmonth").value;
+        let dobyear = document.getElementById("dobyear").value;
+        let phone = document.getElementById("phone").value;
+        let password = document.getElementById("password").value;
+        let confirmpassword = document.getElementById("confirmpassword").value;
+        let country = document.getElementById("country").value;
+        let address = document.getElementById("address").value;
+
+        let firstnameerr = document.getElementById("firstnameerr");
+        let emailerr = document.getElementById("emailerr");
+        let doberr = document.getElementById("doberr");
+        let phoneerr = document.getElementById("phoneerr");
+        let passworderr = document.getElementById("passworderr");
+        let confirmpassworderr = document.getElementById("confirmpassworderr");
+        let countryerr = document.getElementById("countryerr");
+
+        if(firstname == ""){
+            firstnameerr.style.display = "block";
+        }else{
+            firstnameerr.style.display = "none";
+        }
+
+        if(email == ""){
+            emailerr.style.display = "block";
+        }else{
+            emailerr.style.display = "none";
+        }
+
+        if(dobday == "" || dobmonth == "" || dobyear == ""){
+            doberr.style.display = "block";
+        }else{
+            doberr.style.display = "none";
+        }
+
+        if(phone == "" || phone.length < 10){
+            phoneerr.style.display = "block";
+        }else{
+            phoneerr.style.display = "none";
+        }
+
+        if(password == ""){
+            passworderr.style.display = "block";
+        }else{
+            passworderr.style.display = "none";
+        }
+
+        if(confirmpassword == ""){
+            confirmpassworderr.style.display = "block";
+        }else{
+            confirmpassworderr.style.display = "none";
+        }
+
+        if(country == ""){
+            countryerr.style.display = "block";
+        }else{
+            countryerr.style.display = "none";
+        }
+    }
+</script>
+</html>
